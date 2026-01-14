@@ -8,7 +8,16 @@ def sum(arr : list) -> int:
     :param arr:
     :return:
     """
-    pass
+    total=0
+    for i in range(len(arr)):
+        try:
+            total += arr[i]
+        except:
+            pass
+    return(total)
+
+
+
 
 def cleanData(rawData : list) ->list:
     """
@@ -17,6 +26,18 @@ def cleanData(rawData : list) ->list:
     :param rawData:
     :return:
     """
+    newLi=[]
+    for i in range(len(rawData)):
+        try:
+            float(rawData[i])
+            newLi.append(float(rawData[i]))
+        except:
+            continue
+    return(newLi)
+
+
+
+
     pass
 def unreliableCalculator(divisors : list) -> list:
     """
@@ -27,7 +48,16 @@ def unreliableCalculator(divisors : list) -> list:
     :param divisors:
     :return:
     """
-    pass
+    newLi=[]
+    for i in range(len(divisors)):
+        try:
+            newLi.append(100/divisors[i])
+        except TypeError:
+            newLi.append("TypeError")
+        except ZeroDivisionError:
+            newLi.append("ZeroDivisionError")
+    return(newLi)
+
 
 
 def upperAll(arr : list) -> None:
@@ -38,10 +68,13 @@ def upperAll(arr : list) -> None:
     :param arr:
     :return:
     """
-    x = "hello"
-    print(x)
-    x = x.upper()
-    print(x)
+    for i in range(len(arr)):
+        try:
+           arr[i]=arr[i].upper()
+        except:
+            continue
+
+
 
 
 def firstItems(arr : list) -> list:
@@ -54,5 +87,13 @@ def firstItems(arr : list) -> list:
     :param arr:
     :return:
     """
-    pass
+    newLi=[]
+    for i in range(len(arr)):
+        try:
+            arr[i].append(0)
+            newLi.append(arr[i][0])
+        except:
+            newLi.append(arr[i])
+    return(newLi)
+
 
